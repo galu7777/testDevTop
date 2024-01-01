@@ -1,11 +1,10 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Image, TextInput } from 'react-native';
+import { SafeAreaView, View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { BlurView } from '@react-native-community/blur';
-import {figure1, figure2, figure3, figure4, figure5, illustration }  from '../../../assets';
+import {figure1, figure2, figure3, figure4, figure5, illustration, lg_apple, lg_facebook, lg_google }  from '../../../assets';
 import { styles } from './style';
 
-const Login = () => {
+const SingUp = () => {
   return (
     <SafeAreaView style={styles.ctn_global}>
         <View>
@@ -92,14 +91,65 @@ const Login = () => {
                       end={{x:1, y: 1}}
                       // locations={[0, .75, 1]}
                       style={styles.btn_singup}
-                    >
-                      <Text style={{ color: '#fff' }}>Sing Up</Text>
+                    > 
+                      <TouchableOpacity style={styles.btn_touch}>
+                        <Text style={{ color: '#fff', fontWeight: '400' }}>Sing Up</Text>
+                      </TouchableOpacity>
                     </LinearGradient>
                   </View>
 
-                  <View style={{ paddingTop: '5%' }}>
-                    <Text style={{ color: '#B6B6B6' }}>Or sign up with</Text>
-                  </View>       
+                  <View style={styles.ctn_linear}>
+                    <View style={{ flex: 1, height: 1, backgroundColor: '#B6B6B6' }} />
+                    <Text style={{ color: '#B6B6B6', paddingHorizontal: 10 }}>Or sign up with</Text>
+                    <View style={{ flex: 1, height: 1, backgroundColor: '#B6B6B6' }} />
+                  </View>
+
+                  <View style={styles.ctn_btn_rs}>
+                      <View style={{ paddingRight: '5%', paddingLeft: '4.5%' }}>
+                        <LinearGradient
+                          colors={['#B6B6B6', '#000']}
+                          start={{x: 0, y: 0}}
+                          end={{x:1, y: 1}}
+                          style={{ borderRadius: 15 }}
+                        >
+                        <View style={styles.btn_rs}>
+                            <TouchableOpacity>
+                              <Image source={lg_google} style={{height: 30, width: 30}}/>
+                            </TouchableOpacity>
+                        </View>
+                        </LinearGradient>
+                      </View>
+
+                      <View style={{ paddingRight: '5%' }}>
+                        <LinearGradient
+                          colors={['#B6B6B6', '#000']}
+                          start={{x: 0, y: 0}}
+                          end={{x:1, y: 1}}
+                          style={{ borderRadius: 15 }}
+                        >
+                          <View style={styles.btn_rs}>
+                              <TouchableOpacity>
+                                <Image source={lg_apple} style={{height: 30, width: 30}}/>
+                              </TouchableOpacity>
+                          </View>
+                        </LinearGradient>
+                      </View>
+
+                      <View style={{ paddingRight: '5%' }}>
+                        <LinearGradient
+                          colors={['#B6B6B6', '#000']}
+                          start={{x: 0, y: 0}}
+                          end={{x:1, y: 1}}
+                          style={{ borderRadius: 15 }}
+                        >
+                        <View style={styles.btn_rs}>
+                            <TouchableOpacity>
+                              <Image source={lg_facebook} style={{height: 30, width: 30}}/>
+                            </TouchableOpacity>
+                        </View>
+                        </LinearGradient>
+                      </View>
+                  </View>
                   
                 </View>
               </View>
@@ -124,4 +174,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SingUp;

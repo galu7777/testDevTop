@@ -43,6 +43,13 @@ export const styles = StyleSheet.create({
         width: '100%',
         // backgroundColor: 'blue'
     },
+    ctn_linear: {
+        paddingTop: '5%', 
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        width: '72%',
+    },
     title: {
         color: '#EFEFEF',
         fontSize: 35.33,
@@ -54,7 +61,7 @@ export const styles = StyleSheet.create({
         fontWeight: "500"
     },
     ctn_inputs: {
-        paddingTop: '14%',
+        paddingTop: '22%',
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
@@ -75,6 +82,29 @@ export const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    ctn_btn_rs: {
+        paddingTop: '5%',
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'row',
+        alignContent: 'space-between',
+        width: '65%',
+        // backgroundColor: 'red'
+    },
+    btn_rs: {
+        height: 50,
+        width: 63,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderColor: '#B6B6B6',
+        borderWidth: 1,
+        borderRadius: 15
+    },
+    btn_touch: {
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     label: {
         color: '#A4A4A4',
