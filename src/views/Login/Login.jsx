@@ -31,7 +31,7 @@ const Login = () => {
           </View>
         </View>
         <LinearGradient 
-          colors={['#B379DF', '#CC5854', '#B379DF']}
+          colors={['rgba(179, 121, 223, 0.5)', 'rgba(204, 88, 84, 0.08)', 'rgba(179, 121, 223, 0.5)']}
           start={{x: 0, y: 0}}
           end={{x:1, y: 1}}
           locations={[0, .75, 1]}
