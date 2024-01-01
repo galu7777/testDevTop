@@ -13,7 +13,8 @@ export const styles = StyleSheet.create({
         width: '100%',
     },
     ctn_login_info: {
-        flex: 1
-
+        height: '100%',
+        borderRadius: 50,
+        bottom: '27%'
     }
 });
