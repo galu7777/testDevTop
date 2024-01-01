@@ -6,11 +6,11 @@
  */
 
 import React from 'react';
-import Login from './src/views/Login/Login';
+import SingUp from './src/views/SingUp/SingUp';
 
 const App = () => {
   return (
-    <Login/>
+    <SingUp/>
   )
 }
 export default App;
