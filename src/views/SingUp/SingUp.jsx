@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Toast from 'react-native-simple-toast';
 import {figure1, figure2, figure3, figure4, figure5, illustration, lg_apple, lg_facebook, lg_google }  from '../../../assets';
 import { styles } from './style';
 
 const SingUp = () => {
+  const [password, setPassword] = useState('');
+
+  const validatePassword = () => {
+    // Expresión regular para validar la contraseña
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+
+    if (passwordRegex.test(password)) {
+      // Contraseña válida, mostrar Toast de éxito
+      Toast.show('Contraseña válida', Toast.SHORT);
+    } else {
+      // Contraseña inválida, mostrar Toast de error
+      Toast.showWithGravity('Contraseña inválida. Debe incluir al menos una mayúscula, un número, un símbolo y tener al menos 8 caracteres.', Toast.LONG, Toast.CENTER);
+    }
+  };
   return (
     <SafeAreaView style={styles.ctn_global}>
         <View>
@@ -77,10 +92,8 @@ const SingUp = () => {
                       style={styles.input}
                       label="Password"
                       placeholder="*******"
-                      // placeholderTextColor="rgba(0,0,0,0.7)"
-                      // onChangeText={(val) => changePassword(val)}
-                      // value={password}
-                      // secureTextEntry={true}
+                      secureTextEntry={true}
+                      onChangeText={(val) => setPassword(val)}
                     />
                   </View>
 
@@ -92,7 +105,7 @@ const SingUp = () => {
                       // locations={[0, .75, 1]}
                       style={styles.btn_singup}
                     > 
-                      <TouchableOpacity style={styles.btn_touch}>
+                      <TouchableOpacity style={styles.btn_touch} onPress={validatePassword}>
                         <Text style={{ color: '#fff', fontWeight: '400' }}>Sing Up</Text>
                       </TouchableOpacity>
                     </LinearGradient>
